@@ -1,0 +1,21 @@
+2021-01-07 06:11:50 Event logging started
+2021-01-07 06:15:24 HTTP client 192.168.86.54 login succeeded
+2021-01-07 06:17:23 HTTP client 192.168.86.54 login succeeded
+2021-01-07 06:19:25 HTTP client 192.168.86.54 login succeeded
+2021-01-07 06:26:02 Started printing file 0:/gcodes/toolchange_test.gcode
+2021-01-07 06:26:32 Error: G29: Height map file heightmap.csv not found
+2021-01-07 06:26:39 Error: G29: Height map file heightmap.csv not found
+2021-01-07 06:26:47 Error: G29: Height map file heightmap.csv not found
+2021-01-07 06:26:54 Error: G29: Height map file heightmap.csv not found
+2021-01-07 06:26:57 Error: Temperature reading fault on heater 4: sensor open circuit
+2021-01-07 06:26:58 Resume state saved
+2021-01-07 06:26:59 Printing paused at X304.5 Y175.0 Z62.0 C123.0
+2021-01-07 06:27:41 Error: Attempting to extrude with no tool selected.
+2021-01-07 06:27:45 Printing resumed
+2021-01-07 06:27:45 Error: Bad command: X150 Y-49 F50000	
+2021-01-07 06:27:45 Finished printing file 0:/gcodes/toolchange_test.gcode, print time was 0h 1m
+2021-01-07 06:31:26 HTTP client 192.168.86.54 disconnected
+2021-01-07 06:31:28 HTTP client 192.168.86.54 login succeeded
+2021-01-07 06:33:24 HTTP client 192.168.86.54 login succeeded
+2021-01-07 06:35:23 HTTP client 192.168.86.54 login succeeded
+2021-01-07 06:36:16 Warning: VIN under-voltage event (9.5V)
