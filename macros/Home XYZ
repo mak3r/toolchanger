@@ -1,7 +1,7 @@
 ; homeall.g
 ; called to home all axes
 
-M98 Phomec.g			; Home C (ToolHead)
+;M98 Phomec.g			; Home C
 
 M98 Phomey.g			; Home Y
 

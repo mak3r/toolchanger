@@ -19,7 +19,10 @@ M586 P2 S0 						; Disable Telnet
 M667 S1 						; Select CoreXY mode	
 
 ; Endstops
-M574 X1 Y1 S3 						; Set X / Y endstop stall detection
+; default X Y
+;M574 X1 Y1 S3 						; Set X / Y endstop stall detection
+; switched X Y
+M574 X1 Y1 S1 						; Set X / Y endstop NC switch
 M574 Z1 S2 						; Set Z endstop probe
 M558 P7 X0 Y0 Z2 H3 F360 I0 T20000 			; Set Z probe type to switch, the axes for which it is used and the dive height + speeds
 G31 P200 X0 Y0 Z0	 				; Set Z probe trigger value, offset and trigger height
@@ -38,7 +41,7 @@ M569 P8 S0 						; Drive 8 UNUSED
 M569 P9 S0 						; Drive 9 UNUSED
 
 M584 X0 Y1 Z2 C7 E3:4:5:6 				; Apply custom drive mapping
-M208 X-35:328.5 Y-49:243 Z0:300 C0:260 S0 		; Set axis maxima & minima
+M208 X-28.7:328.5 Y-45.3:243 Z0:300 C0:260 S0 		; Set axis maxima & minima
 M350 C8 I0 					; Configure microstepping without interpolation
 M350 X16 Y16 Z16 E16:16:16:16 I1					; Configure microstepping with interpolation
 M92 X100 Y100 Z1600 C100 E800:800:800:834		; Set steps per mm
@@ -52,7 +55,7 @@ M84 S120 												; Set idle timeout
 M915 C S5 F0 H200 					; Coupler
 
 ;Stall Detection
-M915 X Y S5 F0 H400 				; X / Y Axes
+M915 X Y S5 F1 R2 H400              ; X / Y Axes, sensitivity 5, filtered, pause
 
 ; Heaters
 M305 P0 T100000 B4725 C7.06e-8 				; Set thermistor 
@@ -109,8 +112,8 @@ M593 F50						; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/acc
 ; Hemera-tool: X-37.5 Y43.5 Z-6
 
 G10 P0 X-9 Y39 Z-4.9					; T0
-G10 P1 X-9 Y39.25 Z-4.9					; T1
-G10 P2 X-9.05 Y39 Z-13.41				; T2
+G10 P1 X-9.35 Y38.55 Z-4.9					; T1
+G10 P2 X-8.05 Y39 Z-13.41				; T2
 ;G10 P3 X-9 Y39 Z-5					; T3
 
 ;deselect tools

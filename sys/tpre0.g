@@ -5,13 +5,13 @@
 M98 P/macros/Coupler - Unlock
 
 ;Move to location
-G1 X-9.5 Y200 F50000
+G1 X-5 Y200 F50000
 
 ;Move in
 G1 Y230 F50000
 
 ;Collect
-G1 Y242.5 F2500
+G1 Y243 F2500
 
 ;Close Coupler
 M98 P/macros/Coupler - Lock
