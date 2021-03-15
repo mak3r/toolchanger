@@ -41,7 +41,7 @@ M569 P8 S0 						; Drive 8 UNUSED
 M569 P9 S0 						; Drive 9 UNUSED
 
 M584 X0 Y1 Z2 C7 E3:4:5:6 				; Apply custom drive mapping
-M208 X-28.7:328.5 Y-45.3:243 Z0:300 C0:260 S0 		; Set axis maxima & minima
+M208 X-28.7:328.5 Y-45.3:245 Z0:300 C0:260 S0 		; Set axis maxima & minima
 M350 C8 I0 					; Configure microstepping without interpolation
 M350 X16 Y16 Z16 E16:16:16:16 I1					; Configure microstepping with interpolation
 M92 X100 Y100 Z1600 C100 E800:800:800:834		; Set steps per mm
@@ -55,7 +55,7 @@ M84 S120 												; Set idle timeout
 M915 C S5 F0 H200 					; Coupler
 
 ;Stall Detection
-M915 X Y S5 F1 R2 H400              ; X / Y Axes, sensitivity 5, filtered, pause
+M915 X Y S6 F1 R2 H400              ; X / Y Axes, sensitivity 6, filtered, pause
 
 ; Heaters
 M305 P0 T100000 B4725 C7.06e-8 				; Set thermistor 

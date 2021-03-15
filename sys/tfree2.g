@@ -13,9 +13,9 @@ G29 S2
 ;M98 Ppurge.g
 
 ;Move In
-G53 G1 X220 Y150 F50000
+G53 G1 X221 Y150 F50000
 G53 G1 Y220 F50000
-G53 G1 Y242 F5000
+G53 G1 Y241.7 F500
 
 ;Open Coupler
 M98 P/macros/Coupler - Unlock
@@ -24,4 +24,4 @@ M98 P/macros/Coupler - Unlock
 M106 P6 S0
 
 ;Move Out
-G53 G1 Y175 F50000
+G53 G1 Y90 F50000
