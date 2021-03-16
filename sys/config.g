@@ -16,7 +16,7 @@ M586 P0 S1 						; Enable HTTP
 M586 P1 S0 						; Disable FTP
 M586 P2 S0 						; Disable Telnet
 
-M667 S1 						; Select CoreXY mode	
+M669 K1 						; Select CoreXY mode (RRF >= v2.0.3)
 
 ; Endstops
 ; default X Y
