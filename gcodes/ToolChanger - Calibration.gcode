@@ -3210,7 +3210,7 @@ T-1
 ; Disable Mesh Compensation.
 G29 S2
 ; Park
-G1 X-30 Y200 F50000
+G1 X-20 Y200 F50000
 M0	;turn off all heaters
 ; Build Summary
 ;   Build time: 0 hours 7 minutes

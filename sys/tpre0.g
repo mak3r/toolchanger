@@ -5,7 +5,7 @@
 M98 P/macros/Coupler - Unlock
 
 ;Move to location
-G53 G1 X-4 Y200 F50000
+G53 G1 X-5 Y200 F50000
 
 ;Move in
 G53 G1 Y220 F50000
