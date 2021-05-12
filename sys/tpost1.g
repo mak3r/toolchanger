@@ -12,3 +12,6 @@ G29 S1
 
 ;PCF fan on
 M106 P4 R2
+
+; load filament custom config
+M703
