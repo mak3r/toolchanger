@@ -1,7 +1,3 @@
-;Set the Z offset slighly closer for this filament
-M118 P1 S"Resetting z offset for tool T1"
-G10 P1 X-9 Y39 Z-4.85					; T1
-
 ;Set bed temp to 65
 M140 S65
 ;Set standby and active temperatures for the tool
