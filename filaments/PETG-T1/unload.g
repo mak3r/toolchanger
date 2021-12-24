@@ -1,7 +1,7 @@
 ; heat
 M291 P"Please wait while the nozzle is brought to temperature" R"Unloading PETG" T5       ; display message
 G10 S240        ; set current tool to temperature
-M116 P0 S2            ; wait for temp to be reached
+M116 P0 S2           ; wait for temp to be reached
 
 ; feed
 M291 P"Feeding a small amount" R"Unoading PETG" T5      ; display message
