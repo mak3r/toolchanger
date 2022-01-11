@@ -1,0 +1,39 @@
+;Set tool temp
+;G10 P0 S215
+; wait for extruder to reach temp
+;M116 P0 
+;Pickup Tool
+T2
+
+; Absolute positioning
+G90
+
+;brush in
+G1 X236 Y241 F500
+G1 X205 Y239 F500
+G1 X236 Y236 F500
+G1 X205 Y233 F500
+
+;Park for prime/purge
+G1 X255 Y238 F500
+
+;Prime
+G92 E0
+G1 E10 F200
+G1 F50
+G1 E5 F50
+G1 E-0.25 F200
+G92 E0
+;G4 S2
+
+;Run Out
+G1 X239 Y238 F500
+
+;Brush Out
+G1 X205 Y233 F500
+G1 X210 Y242 F500
+G1 X215 Y233 F500
+G1 X220 Y242 F500
+G1 X225 Y233 F500
+G1 X230 Y242 F500
+G1 X235 Y233 F500
