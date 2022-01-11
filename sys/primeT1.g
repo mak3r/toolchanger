@@ -9,10 +9,11 @@ G1 X-31 Y176 F50000
 
 ;Prime
 G92 E0
-G1 E10 F200
+G1 E4 F200
 G1 F50
 G1 E5 F50
-G1 E-5.25 F200
+;G1 E-5.25 F200 ; if nylon
+G1 E-1.25 F200 ; if petg
 G92 E0
 G4 S2 ; wait 2 seconds for drool
 
