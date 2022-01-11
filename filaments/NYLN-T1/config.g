@@ -1,7 +1,7 @@
 ;Set bed temp to 65
 M140 S65
 ;Set standby and active temperatures for the tool
-G10 P1 R230 S250
+G10 P1 R240 S260
 ;Wait for temps 
 ; WARNING be direct about tool# and range or this will wait for all heaters to reach temp
 M116 P1 S2 ; Wait for Tool 1 - within 2 degrees

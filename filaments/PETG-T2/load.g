@@ -1,7 +1,7 @@
 ; heat
 M291 P"Please wait while the nozzle is brought to temperature" R"Loading PETG" T5       ; display message
 G10 S240        ; set current tool to temperature
-M116 P2 S2           ; wait for temp to be reached
+M116            ; wait for temp to be reached
 
 ; load
 M291 P"Insert filament now" R"Loading PETG" T5      ; display message
