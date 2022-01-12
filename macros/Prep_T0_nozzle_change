@@ -1,7 +1,2 @@
 ; Heat TO for nozzle change
 G10 P0 R285
-
-; If there is a fault after the nozzle change run
-;M562 P1
-; This resets the heater fault on T0
-; Note: P0 is the bed and P1 is T0

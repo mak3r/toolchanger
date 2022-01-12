@@ -1,8 +1,8 @@
 ;Set bed temp to 90
 M140 S90
 ;Set standby and active temperatures for the tool
-G10 P2 R230 S250
-M116 P2 S2
+G10 P0 R230 S250
+M116 P0 S2
 M116 H0 S5
 
 ;Set retraction for this filament

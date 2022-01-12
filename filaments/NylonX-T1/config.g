@@ -9,8 +9,8 @@ M116 H0 S5 ; Wait for bed - within 5 degrees
 
 ;Set retraction for this filament
 ; retract 6mm at 60mm/s 
-; unretract 6mm at 80mm/s
-M207 S6.0 F3600 T4800 
+; unretract 6mm at 50mm/s
+M207 S6.0 F3600 T3000 
 
-; pressure advance for tool T1
+; pressure advance for tool T2
 ;M572 D1 S0.02 				

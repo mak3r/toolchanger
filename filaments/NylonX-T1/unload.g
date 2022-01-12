@@ -1,7 +1,7 @@
 ; heat
-M291 P"Please wait while the nozzle is brought to temperature" R"Unloading NYLN" T5       ; display message
-G10 S250        ; set current tool to temperature
-M116 P1 S2       ; wait for temp to be reached
+M291 P"Please wait while the nozzle is brought to temperature" R"Unloading NYLNX" T5       ; display message
+G10 S260        ; set current tool to temperature
+M116 P1 S2          ; wait for temp to be reached
 
 ; feed
 M291 P"Feeding a small amount" R"Unoading NYLN" T5      ; display message

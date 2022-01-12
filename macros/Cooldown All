@@ -1,0 +1,10 @@
+G10 P0 S0 ; set T0 extruder temp
+G10 P0 R0 ; set T0 idle temp
+G10 P1 S0 ; set T1 extruder temp
+G10 P1 R0 ; set T1 idle temp
+G10 P2 S0 ; set T2 extruder temp
+G10 P2 R0 ; set T2 idle temp
+; G10 P3 S0 ; set T3 extruder temp
+; G10 P3 R0 ; set T3 idle temp
+M140 S0 ; set bed temp
+T-1 ; Clear tool selection
