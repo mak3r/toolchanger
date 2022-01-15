@@ -55,29 +55,35 @@ M915 C S5 F0 H200 					; Coupler
 ;Stall Detection
 M915 X Y S5 F0 H400 				; X / Y Axes
 
+; ***************************************
 ; Sensors M308
 ; Asscociated with Heaters M950
+
+; HEAT BED ;
 ;M305 P0 T100000 B4725 C7.06e-8 				; Set thermistor 
 M308 S0 P"bedtemp" Y"thermistor" A"Bed" T100000 B4725 C7.06e-8	;Heat bed thermistor
 M950 H0 T0 C"bedheat"				; Associate heater with thermistor
 M143 H0 S225 						; Set temperature limit for heater 0 to 225C
 
-
+; EXTRUDER 0 ;
 ;M305 S"T0" P1 T100000 B4725 C7.06e-8 			; Set thermistor
 M308 S1 P"e0temp" Y"thermistor" A"T0" T100000 B4725 C7.06e-8	;E0 thermistor
 M950 H1 T1 C"e0heat"				; Associate heater with thermistor
 M143 H1 S300 						; Set temperature limit for heater 1 to 300C
 
+; EXTRUDER 1 ;
 ;M305 S"T1" P2 T100000 B4725 C7.06e-8			; Set thermistor
 M308 S2 P"e1temp" Y"thermistor" A"T1" T100000 B4725 C7.06e-8	;E1 thermistor
 M950 H2 T2 C"e1heat"				; Associate heater with thermistor
 M143 H2 S300 						; Set temperature limit for heater 2 to 300C
 
+; EXTRUDER 2 ;
 ;M305 S"T2" P3 T100000 B4725 C7.06e-8			;Set thermistor
 M308 S3 P"duex.e2temp" Y"thermistor" A"T2" T100000 B4725 C7.06e-8	;E2 thermistor
 M950 H3 T3 C"!duex.e2heat"
 M143 H3 S300 						; Set temperature limit for heater 3 to 300C
 
+; EXTRUDER 3 ;
 ;M305 S"T3" P4 T100000 B4725 C7.06e-8 			; Set thermistor 
 M308 S4 P"duex.e3temp" Y"thermistor" A"T3" T100000 B4725 C7.06e-8	;E3 thermistor
 M950 H4 T4 C"!duex.e3heat"
@@ -101,16 +107,38 @@ G10 P2 R0 S0 						; Reset initial tool 2 active and standby temperatures to 0C
 ;G10 P3 X0 Y0 Z0 					; Reset tool 3 axis offsets
 ;G10 P3 R0 S0 						; Reset initial tool 3 active and standby temperatures to 0C
 
+; ***********************************
 ; Fans
+; M950 to create Fans
+; M106 to set fan parameters
+
+M950 F0 C"nil"					; Fan id 0 is unused
 M106 P0 S0						; UNUSED
-M106 P1 S255 H1 T70					; T0 HE
+
+
+; Tool 0
+M950 F1 C"fan1"					; T0 Hotend Fan
+M106 P1 S255 H1 T70				; T0 HE
+M950 F2 C"fan2"					; T0 Part Cooling Fan
 M106 P2 S0						; T0 PCF
-M106 P3 S255 H2 T70 					; T1 HE
+
+; Tool 1
+M950 F3 C"duex.fan3"			; T1 Hotend Fan
+M106 P3 S255 H2 T70 			; T1 HE
+M950 F4 C"duex.fan4"			; T1 Part Cooling Fan
 M106 P4 S0						; T1 PCF 
-M106 P5 S255 H3 T70 					; T2 HE 
+
+; Tool 2
+M950 F5 C"duex.fan5"			; T2 Hotend Fan
+M106 P5 S255 H3 T70 			; T2 HE 
+M950 F6 C"duex.fan6"			; T2 Part Cooling Fan
 M106 P6 S0 						; T2 PCF
-;M106 P7 S255 H4 T70					; T3 HE
-;M106 P8 S0						; T3 PCF
+
+; Tool 3
+M950 F7 C"duex.fan7"			; T3 Hotend Fan
+M106 P7 S255 H4 T70				; T3 HE
+M950 F8 C"duex.fan8"			; T3 Part Cooling Fan
+M106 P8 S0						; T3 PCF
 
 M593 F50						; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/accelerometer-and-resonance-measurements-of-the-motion-system.3445/)
 ;M376 H15						; bed compensation taper
