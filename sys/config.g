@@ -1,5 +1,6 @@
 ; Configurat; Configuration file for Duet WiFi / Ethernet
 ; executed by the firmware on start-up
+; Configured for RepRapFirmware v3.x
 
 ; General preferences
 M111 S0 						; Debugging off
@@ -54,21 +55,33 @@ M915 C S5 F0 H200 					; Coupler
 ;Stall Detection
 M915 X Y S5 F0 H400 				; X / Y Axes
 
-; Heaters
-M305 P0 T100000 B4725 C7.06e-8 				; Set thermistor 
+; Sensors M308
+; Asscociated with Heaters M950
+;M305 P0 T100000 B4725 C7.06e-8 				; Set thermistor 
+M308 S0 P"bedtemp" Y"thermistor" A"Bed" T100000 B4725 C7.06e-8	;Heat bed thermistor
+M950 H0 T0 C"bedheat"				; Associate heater with thermistor
 M143 H0 S225 						; Set temperature limit for heater 0 to 225C
 
-M305 S"T0" P1 T100000 B4725 C7.06e-8 			; Set thermistor
+
+;M305 S"T0" P1 T100000 B4725 C7.06e-8 			; Set thermistor
+M308 S1 P"e0temp" Y"thermistor" A"T0" T100000 B4725 C7.06e-8	;E0 thermistor
+M950 H1 T1 C"e0heat"				; Associate heater with thermistor
 M143 H1 S300 						; Set temperature limit for heater 1 to 300C
 
-M305 S"T1" P2 T100000 B4725 C7.06e-8			; Set thermistor
+;M305 S"T1" P2 T100000 B4725 C7.06e-8			; Set thermistor
+M308 S2 P"e1temp" Y"thermistor" A"T1" T100000 B4725 C7.06e-8	;E1 thermistor
+M950 H2 T2 C"e1heat"				; Associate heater with thermistor
 M143 H2 S300 						; Set temperature limit for heater 2 to 300C
 
-M305 S"T2" P3 T100000 B4725 C7.06e-8			;Set thermistor
+;M305 S"T2" P3 T100000 B4725 C7.06e-8			;Set thermistor
+M308 S3 P"duex.e2temp" Y"thermistor" A"T2" T100000 B4725 C7.06e-8	;E2 thermistor
+M950 H3 T3 C"!duex.e2heat"
 M143 H3 S300 						; Set temperature limit for heater 3 to 300C
 
 ;M305 S"T3" P4 T100000 B4725 C7.06e-8 			; Set thermistor 
-;M143 H4 S300 						; Set temperature limit for heater 4 to 300C
+M308 S4 P"duex.e3temp" Y"thermistor" A"T3" T100000 B4725 C7.06e-8	;E3 thermistor
+M950 H4 T4 C"!duex.e3heat"
+M143 H4 S300 						; Set temperature limit for heater 4 to 300C
 
 
 ; Tools
