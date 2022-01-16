@@ -22,7 +22,8 @@ M667 S1 						; Select CoreXY mode
 ; Endstops
 M574 X1 Y1 S3 						; Set X / Y endstop stall detection
 M574 Z1 S2 						; Set Z endstop probe
-M558 P7 X0 Y0 Z2 H3 F360 I0 T20000 			; Set Z probe type to switch, the axes for which it is used and the dive height + speeds
+;M558 P7 X0 Y0 Z2 H3 F360 I0 T20000 			; Set Z probe type to switch, the axes for which it is used and the dive height + speeds
+M558 P5 C"zstop" H3 F360 I0 T20000
 G31 P200 X0 Y0 Z0	 				; Set Z probe trigger value, offset and trigger height
 M557 X10:290 Y20:180 S40 				; Define mesh grid
 
