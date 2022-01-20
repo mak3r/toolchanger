@@ -3,10 +3,10 @@
 
 T-1       ;just in case there is a tool coupled, go try to drop it at the dock
 
-M98 P/macros/Coupler - Unlock	;Open Coupler
+M98 P"/macros/Coupler - Unlock"	;Open Coupler
 
 G91 				; Relative mode
-G1 S2 Z5 F5000			; Lower the bed
+G1 H2 Z5 F5000			; Lower the bed
 G90				; back to absolute positioning
 
 G1 X150 Y100 F50000		; Position the endstop above the bed centre

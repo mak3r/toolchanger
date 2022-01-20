@@ -22,8 +22,7 @@ M667 S1 						; Select CoreXY mode
 ; Endstops
 M574 X1 S3 P"xstop"						; Set X endstop stall detection
 M574 Y1 S3 P"ystop"						; Set Y endstop stall detection
-M574 Z1 S2 P"zstop"						; Set Z endstop probe
-;M558 P7 X0 Y0 Z2 H3 F360 I0 T20000 			; Set Z probe type to switch, the axes for which it is used and the dive height + speeds
+M574 Z0 P"nil" S3 ; no Z endstop switch, free up Z endstop input, motor load detection
 M558 P5 C"zstop" H3 F360 I0 T20000		; Set Z probe type to switch, dive height and speeds
 G31 P200 X0 Y0 Z0	 				; Set Z probe trigger value, offset and trigger height
 M557 X10:290 Y20:180 S40 				; Define mesh grid
@@ -40,6 +39,7 @@ M569 P7 S0 						; Drive 7 COUPLER
 M569 P8 S0 						; Drive 8 UNUSED
 M569 P9 S0 						; Drive 9 UNUSED
 
+; NOTE: 584 Remains unchanged for Duet 2 board 
 M584 X0 Y1 Z2 C7 E3:4:5:6 				; Apply custom drive mapping
 M208 X-35:328.5 Y-49:243 Z0:300 C0:260 S0 		; Set axis maxima & minima
 M350 C8 I0 					; Configure microstepping without interpolation
@@ -62,31 +62,26 @@ M915 X Y S5 F0 H400 				; X / Y Axes
 ; Asscociated with Heaters M950
 
 ; HEAT BED ;
-;M305 P0 T100000 B4725 C7.06e-8 				; Set thermistor 
 M308 S0 P"bedtemp" Y"thermistor" A"Bed" T100000 B4725 C7.06e-8	;Heat bed thermistor
 M950 H0 T0 C"bedheat"				; Associate heater with thermistor
 M143 H0 S225 						; Set temperature limit for heater 0 to 225C
 
 ; EXTRUDER 0 ;
-;M305 S"T0" P1 T100000 B4725 C7.06e-8 			; Set thermistor
 M308 S1 P"e0temp" Y"thermistor" A"T0" T100000 B4725 C7.06e-8	;E0 thermistor
 M950 H1 T1 C"e0heat"				; Associate heater with thermistor
 M143 H1 S300 						; Set temperature limit for heater 1 to 300C
 
 ; EXTRUDER 1 ;
-;M305 S"T1" P2 T100000 B4725 C7.06e-8			; Set thermistor
 M308 S2 P"e1temp" Y"thermistor" A"T1" T100000 B4725 C7.06e-8	;E1 thermistor
 M950 H2 T2 C"e1heat"				; Associate heater with thermistor
 M143 H2 S300 						; Set temperature limit for heater 2 to 300C
 
 ; EXTRUDER 2 ;
-;M305 S"T2" P3 T100000 B4725 C7.06e-8			;Set thermistor
 M308 S3 P"duex.e2temp" Y"thermistor" A"T2" T100000 B4725 C7.06e-8	;E2 thermistor
 M950 H3 T3 C"!duex.e2heat"
 M143 H3 S300 						; Set temperature limit for heater 3 to 300C
 
 ; EXTRUDER 3 ;
-;M305 S"T3" P4 T100000 B4725 C7.06e-8 			; Set thermistor 
 M308 S4 P"duex.e3temp" Y"thermistor" A"T3" T100000 B4725 C7.06e-8	;E3 thermistor
 M950 H4 T4 C"!duex.e3heat"
 M143 H4 S300 						; Set temperature limit for heater 4 to 300C
@@ -105,9 +100,9 @@ M563 P2 S"T2" D2 H3 F6					; Define tool 2
 G10 P2 X0 Y0 Z0 					; Reset tool 2 axis offsets
 G10 P2 R0 S0 						; Reset initial tool 2 active and standby temperatures to 0C
 
-;M563 P3 S"T3" D3 H4 F8					; Define tool 3
-;G10 P3 X0 Y0 Z0 					; Reset tool 3 axis offsets
-;G10 P3 R0 S0 						; Reset initial tool 3 active and standby temperatures to 0C
+M563 P3 S"T3" D3 H4 F8					; Define tool 3
+G10 P3 X0 Y0 Z0 					; Reset tool 3 axis offsets
+G10 P3 R0 S0 						; Reset initial tool 3 active and standby temperatures to 0C
 
 ; ***********************************
 ; Fans

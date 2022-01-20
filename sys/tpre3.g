@@ -2,7 +2,7 @@
 ; called before tool 3 is selected
 
 ;Unlock Coupler
-M98 P/macros/Coupler - Unlock
+M98 P"/macros/Coupler - Unlock"
 
 ;Move to location
 G1 X304.5 Y200 F50000
@@ -14,7 +14,7 @@ G1 Y230 F50000
 G1 Y242.5 F2500
 
 ;Close Coupler
-M98 P/macros/Coupler - Lock
+M98 P"/macros/Coupler - Lock"
 
 ;WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING!
 ;if you are using non-standard length hotends ensure the bed is lowered enough BEFORE undocking the tool!
