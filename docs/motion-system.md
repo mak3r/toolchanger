@@ -3,13 +3,24 @@ These procedures should all be done individually and when in full view of the ma
 
 ## Normal motion test
 
-1. Home x axis
-1. Home y axis
-1. Check Z probe homes to center
-1. Check that z-prob causes bed to stop
-1. Check that z axis moves slightly above the bed after detection
+1. Home Y axis
+    1. Insure tool dock stops movement when endstop triggers
+    1. Insure tool dock moves away from stop
+1. Home X axis
+    1. Insure tool dock stops movement when endstop triggers
+    1. Insure tool dock moves away from stop
 1. Home C (lock/unlock)
+    1. Insure tool dock locks then unlocks
+1. Home Z
+    1. Check Z probe homes to center
+    1. Check that z-probe causes bed to stop
+    1. Check that z axis moves slightly away from the probe after detection
+1. HomeAll (should execute the homeall.g file)
+    * Equivalent to  `M98 P"homeall.g"`
+    1. Insure tool dock retreats to "out of the way" position"
+    1. Insure bed is not too close to probe
 
+    
 ## High speed test
 
 ## Also check
