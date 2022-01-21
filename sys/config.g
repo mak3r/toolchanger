@@ -19,13 +19,19 @@ M586 P2 S0 						; Disable Telnet
 
 M667 S1 						; Select CoreXY mode	
 
+; NOTE: 584 Remains unchanged for Duet 2 board with RRF3
+M584 X0 Y1 Z2 C7 E3:4:5:6 				; Apply custom drive mapping
+
+
 ; Endstops
-M574 X1 S3 P"xstop"						; Set X endstop stall detection
-M574 Y1 S3 P"ystop"						; Set Y endstop stall detection
-M574 Z0 P"nil" S3 ; no Z endstop switch, free up Z endstop input, motor load detection
+M574 X1 S1 P"xstop"						; Set X endstop switch
+M574 Y1 S1 P"ystop"						; Set Y endstop switch
+
+M574 Z0 P"nil" ; no Z endstop switch, free up Z endstop input
 M558 P5 C"zstop" H3 F360 I0 T20000		; Set Z probe type to switch, dive height and speeds
 G31 P200 X0 Y0 Z0	 				; Set Z probe trigger value, offset and trigger height
 M557 X10:290 Y20:180 S40 				; Define mesh grid
+
 
 ; Drive direction
 M569 P0 S0 						; Drive 0 X
@@ -34,13 +40,11 @@ M569 P2 S1 						; Drive 2 Z
 M569 P3 S0 						; Drive 3 E0
 M569 P4 S0 						; Drive 4 E1
 M569 P5 S1 						; Drive 5 E2
-;M569 P6 S1 						; Drive 6 E3
+M569 P6 S1 						; Drive 6 E3
 M569 P7 S0 						; Drive 7 COUPLER
 M569 P8 S0 						; Drive 8 UNUSED
 M569 P9 S0 						; Drive 9 UNUSED
 
-; NOTE: 584 Remains unchanged for Duet 2 board 
-M584 X0 Y1 Z2 C7 E3:4:5:6 				; Apply custom drive mapping
 M208 X-35:328.5 Y-49:243 Z0:300 C0:260 S0 		; Set axis maxima & minima
 M350 C8 I0 					; Configure microstepping without interpolation
 M350 X16 Y16 Z16 E16:16:16:16 I1					; Configure microstepping with interpolation
@@ -78,12 +82,12 @@ M143 H2 S300 						; Set temperature limit for heater 2 to 300C
 
 ; EXTRUDER 2 ;
 M308 S3 P"duex.e2temp" Y"thermistor" A"T2" T100000 B4725 C7.06e-8	;E2 thermistor
-M950 H3 T3 C"!duex.e2heat"
+M950 H3 T3 C"duex.e2heat"
 M143 H3 S300 						; Set temperature limit for heater 3 to 300C
 
 ; EXTRUDER 3 ;
 M308 S4 P"duex.e3temp" Y"thermistor" A"T3" T100000 B4725 C7.06e-8	;E3 thermistor
-M950 H4 T4 C"!duex.e3heat"
+M950 H4 T4 C"duex.e3heat"
 M143 H4 S300 						; Set temperature limit for heater 4 to 300C
 
 

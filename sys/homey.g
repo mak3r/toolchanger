@@ -14,7 +14,7 @@ M915 H200 X Y S3 R0 F0 	; set X and Y to sensitivity 3, do nothing when stall, u
 
 G1 H2 Z3 F5000		; lift Z 3mm
 G1 H1 Y-400 F3000 	; move to the front 400mm, stopping at the endstop
-G1 H1 Y2 F2000 		; move away from end
+G1 Y5 F2000 		; move away from end
 G1 H2 Z-3 F1200		; lower Z
 G90 			; back to absolute positioning
 
