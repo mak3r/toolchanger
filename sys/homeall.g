@@ -9,4 +9,4 @@ M98 P"homex.g"			; Home X
 
 M98 P"homez.g"			; Home Z
 
-G1 X150 Y-47 F15000		; Park
+G1 X150 Y-42 F15000		; Park
