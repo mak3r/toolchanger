@@ -15,10 +15,10 @@ G30
 G4 P500				    ; wait 500msec
 ;G1 Z5 F5000			; Lift Z
 
-G4 P500				; wait 500msec
+G4 P500				    ; wait 500msec
 G30
 
-G4 P500				; wait 500msec
-G1 Z5 F5000			; Drop the Bed
+G4 P500				    ; wait 500msec
+G1 Z15 F5000			; Drop the Bed
 
 G90				; Back to absolute positioning
