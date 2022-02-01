@@ -158,6 +158,9 @@ G10 P3 X19.5 Y43.5 Z-5.75			    ; T3
 ;deselect tools
 T-1
 
+; Pressure Advance
+; Only considered for bowden tools
+; Use filament configs for this setting as needed
 ;M572 D0 S0.2 						; pressure advance T0
 ;M572 D1 S0.2 						; pressure advance T1
 ;M572 D2 S0.2 						; pressure advance T2
