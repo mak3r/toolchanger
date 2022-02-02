@@ -37,7 +37,7 @@ M557 X10:290 Y20:180 S40 				; Define mesh grid
 M569 P0 S0 						; Drive 0 X
 M569 P1 S0 						; Drive 1 Y
 M569 P2 S1 						; Drive 2 Z
-M569 P3 S0 						; Drive 3 E0
+M569 P3 S1 						; Drive 3 E0
 M569 P4 S0 						; Drive 4 E1
 M569 P5 S1 						; Drive 5 E2
 M569 P6 S1 						; Drive 6 E3
@@ -48,11 +48,11 @@ M569 P9 S0 						; Drive 9 UNUSED
 M208 X-29:332 Y-45.8:242.5 Z0:300 C0:260 S0 		; Set axis maxima & minima
 M350 C8 I0 					                        ; Configure microstepping without interpolation
 M350 X16 Y16 Z16 E16:16:16:16 I1					; Configure microstepping with interpolation
-M92 X100 Y100 Z1600 C100 E800:800:800:834		    ; Set steps per mm
-M566 X400 Y400 Z8 C2 E2:2:2:2				        ; Set maximum instantaneous speed changes (mm/min)
+M92 X100 Y100 Z1600 C100 E5400:800:800:834		    ; Set steps per mm
+M566 X400 Y400 Z8 C2 E40:2:2:2				        ; Set maximum instantaneous speed changes (mm/min)
 M203 X35000 Y35000 Z1200 C5000 E5000:5000:5000:5000	; Set maximum speeds (mm/min)
-M201 X6000 Y6000 Z400 C400 E2500:2500:2500:2500		; Set accelerations (mm/s^2)
-M906 X2000 Y2000 Z1330 C400 E1680:1680:1680:1680 I30 	; Set motor currents (mA) and motor idle factor in percent
+M201 X6000 Y6000 Z400 C400 E120:2500:2500:2500		; Set accelerations (mm/s^2)
+M906 X2000 Y2000 Z1330 C400 E500:1680:1680:1680 I30 	; Set motor currents (mA) and motor idle factor in percent
 M84 S120 												; Set idle timeout
 
 ;Stall Detection
