@@ -17,7 +17,7 @@ M586 P0 S1 						; Enable HTTP
 M586 P1 S0 						; Disable FTP
 M586 P2 S0 						; Disable Telnet
 
-M667 S1 						; Select CoreXY mode	
+M669 K1 						; Select CoreXY mode (RRF >= v2.0.3)
 
 ; NOTE: 584 Remains unchanged for Duet 2 board with RRF3
 M584 X0 Y1 Z2 C7 E3:4:5:6 				; Apply custom drive mapping
@@ -59,7 +59,7 @@ M84 S120 												; Set idle timeout
 M915 C S5 F0 H200 					; Coupler
 
 ;Stall Detection
-M915 X Y S5 F0 H400 				; X / Y Axes
+M915 X Y S8 F1 R2 H400              ; X / Y Axes, sensitivity 6, filtered, pause
 
 ; ***************************************
 ; Sensors M308

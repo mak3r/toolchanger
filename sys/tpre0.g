@@ -5,10 +5,14 @@
 M98 P"/macros/Coupler - Unlock"
 
 ;Move to location
+<<<<<<< HEAD
 G1 X-5 Y200 F50000
+=======
+G53 G1 X-5 Y200 F50000
+>>>>>>> main
 
 ;Move in
-G1 Y230 F50000
+G53 G1 Y220 F50000
 
 ;Collect
 G1 Y242 F2500
@@ -23,5 +27,5 @@ G1 Z10 F1000
 G90
 
 ;Move Out
-G1 Y150 F4000
+G53 G1 Y150 F4000
 

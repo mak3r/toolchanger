@@ -14,4 +14,4 @@ G4 S1			          ; pause 1 second
 ;G4 S1			          ; pause 1 second
 T-1			            ; deselect tools
 
-G1 X150 Y-49 F50000	; park the head
+G1 X150 Y-40 F50000	; park the head
