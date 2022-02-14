@@ -1,6 +1,6 @@
 G28			            ; home
 G91			            ; relative positioning
-G1 S2 Z10 F5000		  ; lift Z 3mm
+G1 H2 Z10 F5000		  ; lift Z 3mm
 G90			            ; absolute positioning
 
 T-1			            ; deselect tools

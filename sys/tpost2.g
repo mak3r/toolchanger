@@ -6,7 +6,7 @@ M116 P2 S2
 M116 H0 S5
 
 ;prime nozzle
-M98 PprimeT2.g
+M98 P"primeT2.g"
 
 ;mesh levelling on
 G29 S1

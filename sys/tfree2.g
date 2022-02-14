@@ -10,15 +10,15 @@ G90
 G29 S2
 
 ;Purge nozzle
-;M98 Ppurge.g
+;M98 P"purge.g"
 
 ;Move In
-G53 G1 X220 Y150 F50000
+G53 G1 X219.5 Y150 F50000
 G53 G1 Y220 F50000
 G53 G1 Y241.7 F500
 
 ;Open Coupler
-M98 P/macros/Coupler - Unlock
+M98 P"/macros/Coupler - Unlock"
 
 ;fan off
 M106 P6 S0
