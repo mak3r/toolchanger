@@ -66,6 +66,7 @@ M915 X Y S8 F1 R2 H400              ; X / Y Axes, sensitivity 6, filtered, pause
 ; Asscociated with Heaters M950
 
 ; HEAT BED ;
+M140 H0                             ; Declare bed heater 0 exists
 M308 S0 P"bedtemp" Y"thermistor" A"Bed" T100000 B4725 C7.06e-8	;Heat bed thermistor
 M950 H0 T0 C"bedheat"				; Associate heater with thermistor
 M143 H0 S225 						; Set temperature limit for heater 0 to 225C
