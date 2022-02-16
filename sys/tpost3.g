@@ -1,8 +1,9 @@
 ; tpost3.g
 ; called after tool 3 has been selected
 
-;heatup
-M116 P3
+
+; load filament custom config
+M703
 
 ;prime nozzle
 M98 P"primeT3.g"
@@ -12,6 +13,3 @@ G29 S1
 
 ;PCF fan on
 M106 P8 R2
-
-; load filament custom config
-M703
