@@ -6,11 +6,7 @@ G1 X219 Y236 F50000
 G1 X216 Y231 F50000
 
 ;Park for prime/purge
-<<<<<<< HEAD
 G1 X198 Y236 F50000
-=======
-G1 X258 Y238 F50000
->>>>>>> main
 
 ;Prime
 G92 E0
