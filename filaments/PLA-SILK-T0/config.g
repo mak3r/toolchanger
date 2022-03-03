@@ -8,10 +8,9 @@ G10 P0 R210 S215
 M116 P0 S2 ; Wait for Tool 0 - within 2 degrees
 M116 H0 S5 ; Wait for bed - within 5 degrees
 
-;Set retraction for this filament
-; retract 1mm at 50mm/s 
-; unretract 1mm at 60mm/s
-M207 S1.0 F3000 T3600 
+;No retraction for this filament
+; it seems to self retract
+; M207 S0.5 F3000 T3600 
 
-; pressure advance for PLA in tool T0
-M572 D0 S0.025 				
+; pressure advance for PLA SILK in tool T0
+M572 D0 S0.1 				

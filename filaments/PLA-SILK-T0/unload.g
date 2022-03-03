@@ -1,7 +1,7 @@
 ; heat
 M291 P"Please wait while the nozzle is brought to temperature" R"Unloading PLA" T5       ; display message
 G10 S215        ; set current tool to temperature
-M116 P3 S2      ; wait for T3 temp to be reached - to within 2 degrees
+M116 P0 S2      ; wait for T0 temp to be reached - to within 2 degrees
 
 ; feed
 M291 P"Feeding a small amount" R"Unoading PLA" T5      ; display message
@@ -14,11 +14,9 @@ G4 S1           ; wait a second
 ; retract
 M291 P"Retracting" R"Unloading PLA" T5             ; display message
 G1 E-.5 F180    ; retract a little slowly
-G1 E-2 F1200    ; retract quickly
-G4 S1           ; wait a second
-G1 E-10 F1200   ; unload a bit more
-G4 S1           ; wait a second
-G1 E-32 F300    ; unload the remainder
+G1 E-10 F1200   ; retract quickly
+G1 E-70 F1200   ; unload the extruder length
+G1 E-40 F300    ; unload the remainder
 M400            ; wait till everything stops moving
 
 ; cooldown
