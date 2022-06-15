@@ -9,7 +9,7 @@ M116 P0 S2 ; Wait for Tool 0 - within 2 degrees
 M116 H0 S5 ; Wait for bed - within 5 degrees
 
 ;retraction for this filament
-; M207 S0.5 F3000 T3600 
+M207 S0.5 F300 T400 
 
 ; pressure advance for NYLON in tool T0
 M572 D0 S0.1 				

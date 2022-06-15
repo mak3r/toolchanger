@@ -6,17 +6,17 @@ M116 P3 S2           ; wait for temp to be reached
 ; feed
 M291 P"Feeding a small amount" R"Unoading NYLN" T5      ; display message
 M83             ; set extruder to relative mode
-G1 E3 F600     ; grab it 
-G1 E-2 F1800    ; pull out slightly 
-G1 E2 F600      ; mush a bit more
+G1 E3 F200     ; grab it 
+G1 E-2 F400    ; pull out slightly 
+G1 E2 F300      ; mush a bit more
 G4 S1           ; wait a second
 
 ; retract
 M291 P"Retracting" R"Unloading NYLN" T5             ; display message
-G1 E-.5 F180    ; retract a little slowly
-G1 E-10 F1200   ; retract quickly
-G1 E-70 F1200  ; unload the tube length
-G1 E-40 F300  ; unload the remainder
+G1 E-.5 F50    ; retract a little slowly
+G1 E-10 F400   ; retract quickly
+G1 E-70 F400  ; unload the tube length
+G1 E-40 F200  ; unload the remainder
 M400            ; wait till everything stops moving
 
 ; cooldown

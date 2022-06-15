@@ -7,14 +7,14 @@ M116 P3 S2           ; wait for temp to be reached
 M291 P"Insert filament now" R"Loading NYLN" T5      ; display message
 M83             ; set extruder to relative mode
 G1 E6 F300     ; grab it 
-G1 E40 F1200   ; run it to the nozzle
+G1 E40 F400   ; run it to the nozzle
 G1 E8 F300     ; load through nozzle
 G4 S1           ; wait a second
 
 ; retract
 M291 P"Retracting" R"Loading NYLN" T5             ; display message
 G1 E-.5 F180    ; retract a little slowly
-G1 E-.5 F1800   ; retract quickly
+G1 E-.5 F400   ; retract quickly
 M400            ; wait till everything stops moving
 
 ; cooldown
