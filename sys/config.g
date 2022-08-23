@@ -48,24 +48,25 @@ M569 P9 S0 						; Drive 9 UNUSED
 M208 X-29:332 Y-45.8:242.5 Z0:300 C0:260 S0 		; Set axis maxima & minima
 M350 C8 I0 					                        ; Configure microstepping without interpolation
 M350 X16 Y16 Z16 E16:16:16:16 I1					; Configure microstepping with interpolation
-M92 X100 Y100 Z1600 C100 E2800:800:800:834		    ; Set steps per mm
+M92 X100 Y100 Z1600 C100 E2780:800:800:397		    ; Set steps per mm
 M566 X400 Y400 Z8 C2 E40:2:2:2				        ; Set maximum instantaneous speed changes (mm/min)
-M203 X35000 Y35000 Z1200 C5000 E5000:5000:5000:5000	; Set maximum speeds (mm/min)
+M203 X35000 Y35000 Z1200 C5000 E2400:5000:5000:5000	; Set maximum speeds (mm/min)
 M201 X6000 Y6000 Z400 C400 E120:2500:2500:2500		; Set accelerations (mm/s^2)
-M906 X2000 Y2000 Z1330 C400 E500:1680:1680:1680 I30 	; Set motor currents (mA) and motor idle factor in percent
+M906 X2000 Y2000 Z1330 C400 E700:1680:1680:798 I30 	; Set motor currents (mA) and motor idle factor in percent
 M84 S120 												; Set idle timeout
 
 ;Stall Detection
 M915 C S5 F0 H200 					; Coupler
 
 ;Stall Detection
-M915 X Y S8 F1 R2 H400              ; X / Y Axes, sensitivity 6, filtered, pause
+M915 X Y S10 F1 R2 H400              ; X / Y Axes, sensitivity 10, filtered, pause
 
 ; ***************************************
 ; Sensors M308
 ; Asscociated with Heaters M950
 
 ; HEAT BED ;
+M140 H0                             ; Declare bed heater 0 exists
 M308 S0 P"bedtemp" Y"thermistor" A"Bed" T100000 B4725 C7.06e-8	;Heat bed thermistor
 M950 H0 T0 C"bedheat"				; Associate heater with thermistor
 M143 H0 S225 						; Set temperature limit for heater 0 to 225C
@@ -152,8 +153,8 @@ M593 F50						; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/acc
 
 G10 P0 X-9 Y39 Z-4.92					; T0
 G10 P1 X-8.9 Y39.4 Z-4.93				; T1
-G10 P2 X-8.9 Y39.1 Z-13.38				; T2
-G10 P3 X19.5 Y43.5 Z-5.75			    ; T3
+G10 P2 X-8.9 Y39.1 Z-13.29				; T2
+G10 P3 X19.5 Y43.5 Z-5.85			    ; T3
 
 ;deselect tools
 T-1
