@@ -1,5 +1,6 @@
 ;Set bed temp to 60
-M140 S60
+M98 P"max-bed-temp.g" S60  
+M140 S{global.max_bedtemp} 
 ;Set standby and active temperatures for the tool
 G10 P3 R210 S215
 
@@ -14,4 +15,4 @@ M116 H0 S5 ; Wait for bed - within 5 degrees
 M207 S1.0 F3000 T3600 
 
 ; pressure advance for PLA in tool T3
-M572 D0 S0.025 				
+M572 D3 S0.025 				

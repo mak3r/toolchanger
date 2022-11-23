@@ -1,4 +1,4 @@
-;Set bed temp to 50
+;Set bed temp to 60
 M140 S60
 ;Set standby and active temperatures for the tool
 G10 P0 R240 S260

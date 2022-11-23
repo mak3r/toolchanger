@@ -38,7 +38,7 @@ M569 P0 S0 						; Drive 0 X
 M569 P1 S0 						; Drive 1 Y
 M569 P2 S1 						; Drive 2 Z
 M569 P3 S1 						; Drive 3 E0
-M569 P4 S0 						; Drive 4 E1
+M569 P4 S1 						; Drive 4 E1
 M569 P5 S1 						; Drive 5 E2
 M569 P6 S1 						; Drive 6 E3
 M569 P7 S0 						; Drive 7 COUPLER
@@ -48,11 +48,11 @@ M569 P9 S0 						; Drive 9 UNUSED
 M208 X-29:332 Y-45.8:242.5 Z0:300 C0:260 S0 		; Set axis maxima & minima
 M350 C8 I0 					                        ; Configure microstepping without interpolation
 M350 X16 Y16 Z16 E16:16:16:16 I1					; Configure microstepping with interpolation
-M92 X100 Y100 Z1600 C100 E2780:800:800:397		    ; Set steps per mm
-M566 X400 Y400 Z8 C2 E40:2:2:2				        ; Set maximum instantaneous speed changes (mm/min)
-M203 X35000 Y35000 Z1200 C5000 E2400:5000:5000:5000	; Set maximum speeds (mm/min)
-M201 X6000 Y6000 Z400 C400 E120:2500:2500:2500		; Set accelerations (mm/s^2)
-M906 X2000 Y2000 Z1330 C400 E700:1680:1680:798 I30 	; Set motor currents (mA) and motor idle factor in percent
+M92 X100 Y100 Z1600 C100 E2780:2780:2780:397		    ; Set steps per mm
+M566 X400 Y400 Z8 C2 E40:40:40:2				        ; Set maximum instantaneous speed changes (mm/min)
+M203 X35000 Y35000 Z1200 C5000 E2400:2400:2400:5000	; Set maximum speeds (mm/min)
+M201 X6000 Y6000 Z400 C400 E120:120:120:2500		; Set accelerations (mm/s^2)
+M906 X2000 Y2000 Z1330 C400 E700:700:700:798 I30 	; Set motor currents (mA) and motor idle factor in percent
 M84 S120 												; Set idle timeout
 
 ;Stall Detection
@@ -151,10 +151,10 @@ M593 F50						; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/acc
 ; Volcano-tool: X-9 Y39 Z-13.5
 ; Hemera-tool: X-37.5 Y43.5 Z-6
 
-G10 P0 X-9 Y39 Z-4.92					; T0
-G10 P1 X-8.9 Y39.4 Z-4.93				; T1
-G10 P2 X-8.9 Y39.1 Z-13.29				; T2
-G10 P3 X19.5 Y43.5 Z-5.85			    ; T3
+G10 P0 X-9 Y39 Z-4.82					; T0
+G10 P1 X-8.6 Y39.2 Z-4.93				; T1
+G10 P2 X-9 Y39.6 Z-13.22				; T2
+G10 P3 X19.6 Y43.3 Z-5.78			    ; T3
 
 ;deselect tools
 T-1
