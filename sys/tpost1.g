@@ -1,8 +1,8 @@
 ; tpost1.g
 ; called after tool 1 has been selected
 
-;heatup
-M116 P1
+; load filament custom config
+M703
 
 ;prime nozzle
 M98 P"primeT1.g"
