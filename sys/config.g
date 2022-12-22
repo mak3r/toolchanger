@@ -12,7 +12,7 @@ M555 P2 						; Set firmware compatibility to look like Marlin
 ; Network
 ; Read https://duet3d.dozuki.com/Wiki/Gcode#Section_M587_Add_WiFi_host_network_to_remembered_list_or_list_remembered_networks
 M550 P"Mak3rs ToolChanger" 	; Set machine name
-M552 S1							  ; Enable Networking
+M552 S1	P192.168.86.250						  ; Enable Networking
 M586 P0 S1 						; Enable HTTP
 M586 P1 S0 						; Disable FTP
 M586 P2 S0 						; Disable Telnet
@@ -153,7 +153,7 @@ M593 F50						; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/acc
 
 G10 P0 X-9 Y39 Z-4.82					; T0
 G10 P1 X-8.6 Y39.2 Z-4.93				; T1
-G10 P2 X-9 Y39.6 Z-13.22				; T2
+G10 P2 X-9 Y39.6 Z-13.32				; T2
 G10 P3 X19.6 Y43.3 Z-5.78			    ; T3
 
 ;deselect tools
@@ -173,6 +173,14 @@ T-1
 ; @see: max-bed-temp.g
 ; @example: M98 P"max-bed-temp.g" S<temp>
 global max_bedtemp=0
+
+; RRF v3.5+
+; Initialize filament types
+; represent the filament names for each extruder
+; Initialize each one to NONE and then set the filament type (ftype)
+;  in the filaments/<filament>/config.g file
+; Use the filament type when prime/purge
+;global ftype={NONE,NONE,NONE,NONE}
 
 M501; load config-override.g
 

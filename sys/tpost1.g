@@ -12,3 +12,6 @@ G29 S1
 
 ;PCF fan on
 M106 P4 R2
+
+;Restore location
+M98 P"tc-loc-restore.g"

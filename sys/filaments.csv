@@ -1,4 +1,6 @@
-RepRapFirmware filament assignment file v1 generated at 2022-08-26 09:20
+RepRapFirmware filament assignment file v1 generated at 2022-12-19 16:07
 extruder,filament
-3,Flex85A-T3
-0,NYLN-T0
+3,PLA-T3
+2,PLA-T2
+1,PLA-T1
+0,PLA-T0
