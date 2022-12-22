@@ -13,4 +13,9 @@ M116 H0 S5 ; Wait for bed - within 5 degrees
 ;M98 P"tool-filament-type.g" S1 N"PLA"
 
 ;retraction for this filament
-M207 S0.9 F300 T400 
+; (P1) Tool 1 retraction setting only
+; (S0.5) retract by .5 mm
+; (F800) retraction feedrate
+; (T400) unretraction feedrate
+; (Z0.075) extra Z hop
+M207 P1 S0.5 F800 T400 Z0.075 

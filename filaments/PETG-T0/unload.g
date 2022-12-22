@@ -13,7 +13,7 @@ G4 S1           ; wait a second
 M291 P"Retracting" R"Unloading PETG" T5             ; display message
 G1 E-.5 F180    ; retract a little slowly
 G1 E-10 F1800   ; retract quickly
-G1 E-40 F3000  ; unload the tube length
+G1 E-45 F3000  ; unload the tube length
 G1 E-15 F300  ; unload the remainder
 M400            ; wait till everything stops moving
 

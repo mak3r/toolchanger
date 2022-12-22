@@ -8,7 +8,7 @@ M291 P"Insert filament now" R"Loading PETG" T5      ; display message
 M83             ; set extruder to relative mode
 G1 E10 F600     ; grab it 
 G1 E40 F3000   ; run it to the nozzle
-G1 E45 F300     ; load through nozzle
+G1 E20 F300     ; load through nozzle
 G4 S1           ; wait a second
 
 ; retract

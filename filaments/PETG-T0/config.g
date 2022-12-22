@@ -1,13 +1,11 @@
 ;Set bed temp to 90
-M140 S90
+M98 P"max-bed-temp.g" S90  
+M140 S{global.max_bedtemp} 
+
 ;Set standby and active temperatures for the tool
-G10 P0 R230 S250
+G10 P0 R220 S240
 M116 P0 S2
 M116 H0 S5
 
 ;Set retraction for this filament
-; retract 3.5mm at 40mm/s
-M207 S3.5 F2400
-
-;Set fan speed somwhere between 30-50%
-; disable fan on first 3 layers
+M207 P0 S0.8 F800
