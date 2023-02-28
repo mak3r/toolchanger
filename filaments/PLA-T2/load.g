@@ -1,7 +1,7 @@
 ; heat
-;M291 P"Please wait while the nozzle is brought to temperature" R"Loading PLA" T5       ; display message
-;G10 S215        ; set current tool to temperature
-;M116 P2 S2      ; wait for T2 temp to be reached - to within 2 degrees
+M291 P"Please wait while the nozzle is brought to temperature" R"Loading PLA" T5       ; display message
+G10 S215        ; set current tool to temperature
+M116 P2 S2      ; wait for T2 temp to be reached - to within 2 degrees
 
 ; load
 M291 P"Insert filament now" R"Loading PLA" T5      ; display message
