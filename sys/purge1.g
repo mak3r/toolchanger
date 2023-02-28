@@ -6,15 +6,16 @@
 
 ;Park for prime/purge
 G1 X-31 Y176 F50000
+G4 S2   ; dwell - wait 2 seconds for drool
 
-;Prime
+;Purge
 G92 E0
 G1 E1 F200
 G1 F50
 G1 E0.4 F50
 G1 E-01.2 F800
 G92 E0
-G4 S2   ; dwell - wait 2 seconds for drool
+
 
 ;Run Out
 G1 X-37.5 Y160 F50000

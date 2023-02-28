@@ -150,11 +150,12 @@ M593 F50						; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/acc
 ; V6-tool: X-9 Y39 Z-5
 ; Volcano-tool: X-9 Y39 Z-13.5
 ; Hemera-tool: X-37.5 Y43.5 Z-6
+; Revo Micro: X-9 Y39 Z-5
 
-G10 P0 X-9 Y39 Z-4.82					; T0
+G10 P0 X-9 Y39 Z-4.92					; T0
 G10 P1 X-8.6 Y39.2 Z-4.93				; T1
-G10 P2 X-9 Y39.6 Z-13.32				; T2
-G10 P3 X19.6 Y43.3 Z-5.78			    ; T3
+G10 P2 X-8.6 Y39.6 Z-4.52				; T2
+G10 P3 X19.6 Y43.3 Z-5.98			    ; T3
 
 ;deselect tools
 T-1
