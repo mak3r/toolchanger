@@ -14,8 +14,8 @@ G4 S1           ; wait a second
 ; retract
 M291 P"Retracting" R"Unloading NYLONX" T5             ; display message
 G1 E-.5 F180    ; retract a little slowly
-G1 E-10 F400   ; retract quickly
-G1 E-40 F400   ; unload the extruder length
+G1 E-10 F800   ; retract quickly
+G1 E-60 F400   ; unload the extruder length
 G1 E-20 F200    ; unload the remainder
 M400            ; wait till everything stops moving
 

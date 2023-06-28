@@ -12,4 +12,4 @@ M116 H0 S5 ; Wait for bed - within 5 degrees
 ; M207 S0.5 F300 T400 
 
 ; pressure advance for tool T3
-M572 D0 S0.2 				
+M572 D3 S0.2 				
