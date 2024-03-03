@@ -11,8 +11,9 @@ M555 P2 						; Set firmware compatibility to look like Marlin
 
 ; Network
 ; Read https://duet3d.dozuki.com/Wiki/Gcode#Section_M587_Add_WiFi_host_network_to_remembered_list_or_list_remembered_networks
+M540 P48:E7:DA:1D:F8:B4 ;Set MAC address - 48:E7:DA:1D:F8:B3 was the default and conflicts with Roomba
 M550 P"Mak3rs ToolChanger" 	; Set machine name
-M552 S1	P192.168.86.250						  ; Enable Networking
+M552 S1	P192.168.86.8					  ; Enable Networking
 M586 P0 S1 						; Enable HTTP
 M586 P1 S0 						; Disable FTP
 M586 P2 S0 						; Disable Telnet
@@ -150,11 +151,12 @@ M593 F50						; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/acc
 ; V6-tool: X-9 Y39 Z-5
 ; Volcano-tool: X-9 Y39 Z-13.5
 ; Hemera-tool: X-37.5 Y43.5 Z-6
+; Revo Micro: X-9 Y39 Z-5
 
-G10 P0 X-9 Y39 Z-4.82					; T0
-G10 P1 X-8.6 Y39.2 Z-4.93				; T1
-G10 P2 X-9 Y39.6 Z-13.16				; T2
-G10 P3 X19.6 Y43.3 Z-5.78			    ; T3
+G10 P0 X-9 Y39 Z-4.92					; T0
+G10 P1 X-8.8 Y39.2 Z-5.13				; T1
+G10 P2 X-8.6 Y39.6 Z-4.18				; T2
+G10 P3 X19.6 Y43.3 Z-5.94			    ; T3
 
 ;deselect tools
 T-1

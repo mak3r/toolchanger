@@ -10,7 +10,7 @@ G90
 G29 S2
 
 ;Purge nozzle
-M98 P"purge1.g"
+;M98 P"purge1.g"
 
 ;Move In
 G53 G1 X84.5 Y150 F50000

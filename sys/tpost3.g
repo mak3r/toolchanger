@@ -15,4 +15,5 @@ G29 S1
 M106 P8 R2
 
 ;Restore location
-M98 P"tc-loc-restore.g"
+; commented out because T3 is slamming into left side of frame at start
+;M98 P"tc-loc-restore.g"

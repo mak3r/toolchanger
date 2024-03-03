@@ -8,14 +8,23 @@ G1 X339 Y155 F50000
 ;Park for prime/purge
 G1 X335 Y174 F50000
 
-;Prime
+; ============== Prime
 G92 E0
-G1 E2 F200
+
+; non-flex prime
+;G1 E2 F200
+;G1 F50
+;G1 E1 F50
+;G1 E-0.2 F100
+
+; flex prime
+G1 E9 F200
 G1 F50
 G1 E1 F50
-G1 E-0.2 F100
+
 G92 E0
 G4 S2   ; dwell 
+; ============== END Prime
 
 ;Run Out
 G1 X335 Y170 F50000
