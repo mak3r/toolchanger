@@ -153,10 +153,10 @@ M593 F50						; cancel ringing at 50Hz (https://forum.e3d-online.com/threads/acc
 ; Hemera-tool: X-37.5 Y43.5 Z-6
 ; Revo Micro: X-9 Y39 Z-5
 
-G10 P0 X-9 Y39 Z-4.67					; T0
-G10 P1 X-9.6 Y39.4 Z-4.86				; T1
-G10 P2 X-9.34 Y39.22 Z-4.74				; T2
-G10 P3 X18.6 Y43.66 Z-5.91			    ; T3
+G10 P0 X-9 Y39 Z-4.71					; T0
+G10 P1 X-9.6 Y39.4 Z-4.73				; T1
+G10 P2 X-9.34 Y39.22 Z-4.78				; T2
+G10 P3 X18.6 Y43.66 Z-5.95			    ; T3
 
 ;deselect tools
 T-1

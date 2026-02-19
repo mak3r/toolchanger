@@ -7,9 +7,15 @@ G1 X-35 Y155 F50000
 ;Park for prime/purge
 G1 X-31 Y176 F50000
 
-;Prime
+;Set extruder offset to 0
 G92 E0
-G1 E1 F200
+
+; Uretract after last tfree
+G1 E25 F800
+
+;Prime
+G1 E15 F800 ;force a bunch out quickly
+G1 E1 F200 ;start to drool it a bit
 G1 F50
 G1 E0.4 F50
 G1 E-01.2 F200
